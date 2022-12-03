@@ -1,8 +1,10 @@
 #ifndef COMPTEBANCAIRE_HPP
 #define COMPTEBANCAIRE_HPP
+using namespace std;
 class CompteBancaire
 {
 	private:
+		string NomTitulaire;
 		float Solde;
 		int NombreEnvoi;
 		int NombreRetrait;
@@ -11,7 +13,7 @@ class CompteBancaire
 		void AccederSoldeCompteBancaire();
 		void CrediterCompteBancaire(float);
 	        void DebiterCompteBancaire(float);
-		CompteBancaire(float);
+		CompteBancaire(string,float);
 		void AfficherCompteBancaire();
 		CompteBancaire Virement(float,CompteBancaire);
 };

@@ -2,7 +2,9 @@
 #include<string>
 #include "CompteBancaire.hpp"
 using namespace std;
-CompteBancaire::CompteBancaire(float som)         {
+CompteBancaire::CompteBancaire(string nom,float som)     
+{
+	NomTitulaire=nom;
         Solde=som;                                        NombreEnvoi=0;                                    NombreRetrait=0;
 }                                                 void CompteBancaire::InitialiserCompteBancaire(float s)                                             {                                                         Solde=s;                                  }
 void CompteBancaire::AccederSoldeCompteBancaire()
@@ -19,7 +21,7 @@ void CompteBancaire::DebiterCompteBancaire(float som)
         NombreRetrait++;
 }
 void CompteBancaire::AfficherCompteBancaire()
-{                                                         cout<<"\n Le solde du compte est :"<<Solde<<"frc\nLe nombre d'Envoi est:"<<NombreEnvoi<<"Et le nombre de retrait est:"<<NombreRetrait<<endl;
+{                                                         cout<<"\n Le Titulaire est:"<<NomTitulaire<<"Le solde du compte est :"<<Solde<<"frc\nLe nombre d'Envoi est:"<<NombreEnvoi<<"Et le nombre de retrait est:"<<NombreRetrait<<endl;
 }  
 CompteBancaire CompteBancaire::Virement(float som,CompteBancaire C)                                 {                                                         Solde-=som;                                       NombreRetrait++;                                  C.Solde+=som;
 	return C;					
