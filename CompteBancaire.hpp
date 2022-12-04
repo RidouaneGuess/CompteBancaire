@@ -3,7 +3,7 @@
 using namespace std;
 class CompteBancaire
 {
-	private:
+	protected:
 		string NomTitulaire;
 		float Solde;
 		int NombreEnvoi;
@@ -14,7 +14,7 @@ class CompteBancaire
 		void CrediterCompteBancaire(float);
 	        void DebiterCompteBancaire(float);
 		CompteBancaire(string,float);
-		void AfficherCompteBancaire();
+		virtual void AfficherCompteBancaire();
 		CompteBancaire Virement(float,CompteBancaire);
 };
 #endif

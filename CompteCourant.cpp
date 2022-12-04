@@ -2,10 +2,10 @@
 #include <string>
 #include "CompteCourant.hpp"
 using namespace std;
-CompteCourant::CompteCourant(string nom,float som,int NbrVers,int NbrRetr) : CompteBancaire(nom,som,NbrVers,NbrRetr)
+CompteCourant::CompteCourant(string nom,float som) : CompteBancaire(nom,som)
 {
 
-         NombreDepense=0;                             NombrePayerFacture=0;                         NombreRecevoirSalaire=0;                      NombreRecevoirBourseEtude=0;                  NombreRecevoirPension=0;
+          NombreDepense=0;                                  NombreFacturePayer=0;                             NombreRecevoirSalaire=0;                          NombreRecevoirBourseEtude=0;                      NombreRecevoirPension=0;
 }
 void CompteCourant::PayerFacture()
 {
@@ -16,7 +16,7 @@ void CompteCourant::PayerFacture()
         {
                 Solde-=montant;
                 NombreDepense++;
-                NombreFacturePayer+++;
+                NombreFacturePayer++;
                 cout<<"\nLe paiement a été éffectué avec succès!"<<endl;
         }
         else
@@ -27,12 +27,13 @@ void CompteCourant::RecevoirSalaire()
         int salaire{300000};
         cout<<"Votre salaire est:"<<salaire<<"Frc"<<endl;
         cout<<"\nCe mois est en qell'iéme jour?"<<endl;
+	int jour;
         cin>>jour;
         if(jour>=25 && jour<32)
         {
                 Solde+=salaire;
                 NombreRecevoirSalaire++;
-                NombreVersement++;
+                NombreEnvoi++;
                 cout<<"\nVotre salaire est viré dans votre compte"<<endl;
         }
         else
@@ -78,7 +79,11 @@ void CompteCourant::RecevoirPension()
         }
         else{
                 if(dat<3)
-                        cout"\nSoyez patient , la pension se prend de 3mois  en 3mois!"<<endl;
+                        cout<<"\nSoyez patient , la pension se prend de 3mois  en 3mois!"<<endl;
         }
+}	
+void CompteCourant::AfficherCompteBancaire()
+{
+	CompteBancaire::AfficherCompteBancaire();
+       cout<<"\nLe nombre total des depenses est:"<<NombreDepense<<endl;                                  cout<<"\nLe nombre total de paiement de facture est:"<<NombreFacturePayer<<endl;                    cout<<"\nLe nombre total de Recevoir Salaire est :"<<NombreRecevoirSalaire<<endl;                   cout<<"\nLe nombre total de Recevoir Bourse d'Etude est :"<<NombreRecevoirBourseEtude<<endl;        cout<<"\nLe nombre total de Recevoir de Pension est :"<< NombreRecevoirPension<<endl;
 }
-

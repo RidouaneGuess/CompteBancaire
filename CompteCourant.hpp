@@ -1,20 +1,21 @@
 #ifndef COMPTECOURANT_HPP
 #define COMPTECOURANT_HPP
 #include "CompteBancaire.hpp"
-class CompteCourant : class CompteBancaire
+class CompteCourant : public CompteBancaire
 {
 	private:
 		int NombreDepense;
-		int NombrePayerFacture;
+		int NombreFacturePayer;
 		int NombreRecevoirSalaire;
 		int NombreRecevoirBourseEtude;
 		int NombreRecevoirPension;
 	public:
-		CompteCourant(string,float,int,int,int,int,int,int,int);
+		CompteCourant(string,float);
 		void PayerFacture();
 		void RecevoirSalaire();
 		void RecevoirBourseEtude();
 		void RecevoirPension();
+		void AfficherCompteBancaire();
 
 };
 #endif
