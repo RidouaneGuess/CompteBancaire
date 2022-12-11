@@ -1,0 +1,7 @@
+#!/bin/bash
+clear;
+g++ main.cpp CompteBancaire/CompteBancaire.cpp CompteCourant/CompteCourant.cpp -o prog;
+echo "C'est Compilé :)";
+echo "Exécution....";
+sleep 5;
+./prog;
