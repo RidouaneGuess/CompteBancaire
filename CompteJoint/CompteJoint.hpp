@@ -1,4 +1,4 @@
-#include "CompteBancaire.hpp"
+#include "../CompteBancaire/CompteBancaire.hpp"
 class CompteJoint :public CompteBancaire
 {
 	private:
