@@ -1,6 +1,6 @@
 #ifndef COMPTECOURANT_HPP
 #define COMPTECOURANT_HPP
-#include "CompteBancaire.hpp"
+#include "../CompteBancaire/CompteBancaire.hpp"
 class CompteCourant : public CompteBancaire
 {
 	private:
