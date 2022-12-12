@@ -4,9 +4,11 @@
 
     class CompteTitre : public CompteBancaire
     {
-        private:
-
-        public:
-            
+    private:
+        /* data */
+    public:
+        CompteTitre(/* args */);
+        ~CompteTitre();
     };
+    
 #endif
