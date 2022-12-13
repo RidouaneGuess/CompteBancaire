@@ -2,6 +2,7 @@
 #include<string>
 #include "CompteBancaire/CompteBancaire.hpp"
 #include "CompteCourant/CompteCourant.hpp"
+#include "CompteJoint/CompteJoint.hpp"
 using namespace std;
 int main()
 {
@@ -13,6 +14,6 @@ int main()
 	CompteCourant C2("Ridmasta",10000);
 	C2.AfficherCompteBancaire();
 	CompteJoint C3("Ridouane","Alazi",20000);
-	C3.FaireAction();
+	C3.FaireAction("Ridouane");
 	return 0;
 }

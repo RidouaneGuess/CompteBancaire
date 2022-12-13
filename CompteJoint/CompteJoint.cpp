@@ -2,13 +2,13 @@
 #include<string>
 #include "CompteJoint.hpp"
 using namespace std;
-CompteJoint::CompteJoint(string nom1,string nom2,float som):CompteBancaire(nom1,float)
+CompteJoint::CompteJoint(string nom1,string nom2,float som):CompteBancaire(nom1,som)
 {
 	this->Titulaire2=nom2;
 }
 void CompteJoint::FaireAction(string nom)
 {
-	if(nom==Titulaire1 || nom==Titulaire2)
+	if(nom==Titulaire2 || nom==NomTitulaire)
 	{
 		float PC{5000};
 		int rep;
