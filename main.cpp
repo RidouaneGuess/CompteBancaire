@@ -12,5 +12,7 @@ int main()
 	cout<<"\n\nCompte Couraant!"<<endl;
 	CompteCourant C2("Ridmasta",10000);
 	C2.AfficherCompteBancaire();
+	CompteJoint C3("Ridouane","Alazi",20000);
+	C3.FaireAction();
 	return 0;
 }
