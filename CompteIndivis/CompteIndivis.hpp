@@ -2,11 +2,12 @@
 #define CompteIndivis_HPP_
 #include "CompteBancaire.hpp"
 
-    class CompteIndivis : public CompteBancaire
+    class CompteIndivis : public CompteJoint
     {
-        private:
-
         public:
+            CompteIndivis::CompteIndivis();
+            float CompteIndivis::retrait(string,string,float);
+            float CompteIndivis::versement(string,string,float);
 
     };
     
