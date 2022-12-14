@@ -1,6 +1,6 @@
 #!/bin/bash
 clear;
-g++ main.cpp CompteBancaire/CompteBancaire.cpp CompteCourant/CompteCourant.cpp CompteJoint/CompteJoint.cpp CompteTerme/CompteTerme.hpp -o prog;
+g++ main.cpp CompteBancaire/CompteBancaire.cpp CompteCourant/CompteCourant.cpp CompteJoint/CompteJoint.cpp CompteTerme/CompteTerme.cpp -o prog;
 echo "C'est Compilé :)";
 echo "Exécution....";
 sleep 5;

@@ -1,7 +1,7 @@
 #include "../CompteBancaire/CompteBancaire.hpp"
 #ifndef COMPTETERME_HPP
 #define COMPTETERME_HPP
-class CompteTerme:public CompteBancaire.hpp
+class CompteTerme : public CompteBancaire
 {
 	private:
 		int duree;
@@ -9,3 +9,4 @@ class CompteTerme:public CompteBancaire.hpp
 		CompteTerme(string,float,int);
 		void ToucherArgent();
 };
+#endif
