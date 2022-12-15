@@ -21,7 +21,7 @@ void CompteBancaire::DebiterCompteBancaire(float som)
         NombreRetrait++;
 }
 void CompteBancaire::AfficherCompteBancaire()
-{                                                         cout<<"\n Le Titulaire est:"<<NomTitulaire<<"Le solde du compte est :"<<Solde<<"frc\nLe nombre d'Envoi est:"<<NombreEnvoi<<"Et le nombre de retrait est:"<<NombreRetrait<<endl;
+{                                                         cout<<"\n Le Titulaire est:"<<NomTitulaire<<"\nLe solde du compte est :"<<Solde<<"frc\nLe nombre d'Envoi est:"<<NombreEnvoi<<"\nEt le nombre de retrait est:"<<NombreRetrait<<endl;
 }  
 CompteBancaire CompteBancaire::Virement(float som,CompteBancaire C)                                 {                                                         Solde-=som;                                       NombreRetrait++;                                  C.Solde+=som;
 	return C;					

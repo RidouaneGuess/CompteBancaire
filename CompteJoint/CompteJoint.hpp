@@ -1,9 +1,17 @@
-#include "CompteBancaire.hpp"
+#include "../CompteBancaire/CompteBancaire.hpp"
+<<<<<<< HEAD
+=======
+#ifndef COMPTEJOINT_HPP
+#define COMPTEJOINT_HPP
+>>>>>>> Masta
 class CompteJoint :public CompteBancaire
 {
-	private:
+	protected:
 		string Titulaire2;
 	public:
 		CompteJoint(string,string,float);
-		void AfficherCompteBancaire();
-		void 
+		void FaireAction(string nom);
+};
+#endif
+
+

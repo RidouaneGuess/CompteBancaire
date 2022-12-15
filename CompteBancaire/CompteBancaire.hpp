@@ -1,5 +1,6 @@
 #ifndef COMPTEBANCAIRE_HPP
 #define COMPTEBANCAIRE_HPP
+#include<string>
 using namespace std;
 class CompteBancaire
 {
