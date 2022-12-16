@@ -1,4 +1,4 @@
-#include<iostream>>
+#include<iostream>
 #include<string>
 #include"CompteIndivis.hpp"
 using namespace std;
