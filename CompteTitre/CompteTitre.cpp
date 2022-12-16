@@ -1,16 +1,17 @@
 #include<iostream>
 #include<string>
 #include"CompteTitre.hpp"
-
-CompteTitre::CompteTitre()
+void CompteTitre::ActionsImmobiliere()
 {
-    
-}
-float CompteTitre::Achat(string nom,string produit,float prix)
-{
-
-}
-float CompteTitre::Vente(string nom,string produit,float prix)
-{
-
+    float House{500000};
+    if(Solde>=House)
+    {
+        Solde-=House;
+        NombreRetrait++;
+        cout<<"\nFELLICITATION!\nVOUS VENEZ D'ACHETER UNE MAISON A "<<House <<"frs" <<endl;
+    }
+    else
+    {
+        cout<<"SOLDE INSUFFISANT.\nLA MAISON COUTE "<<House <<"frs\nVOTRE SOLDE EST: " <<Solde <<"frs" <<endl;
+    }
 }

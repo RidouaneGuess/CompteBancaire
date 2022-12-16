@@ -1,13 +1,11 @@
 #ifndef CompteEpargne_HPP_
 #define CompteEpargne_HPP_
-#include "CompteBancaire.hpp"
+#include "../CompteBancaire/CompteBancaire.hpp"
 using namespace std;
-    class CompteEpargne : public ComppteBancaire
+    class CompteEpargne : public CompteBancaire
     {
         public:
-            CompteEpargne::CompteEpargne();
-            void CompteEpargne::Protocole(string,float);
-
+            void Protocole();
     };
 
 #endif

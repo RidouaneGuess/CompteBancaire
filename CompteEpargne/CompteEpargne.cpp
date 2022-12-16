@@ -2,11 +2,9 @@
 #include<string>
 #include"CompteEpargne.hpp"
 
-CompteEpargne::CompteEpargne()
+void CompteEpargne::Protocole()
 {
-    
-}
-void CompteEpargne::Protocole(string nom,float versement)
-{
-
+    float montant{50000};
+    Solde+=montant;
+    NombreEnvoi++;
 }
