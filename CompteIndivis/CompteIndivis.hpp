@@ -4,6 +4,7 @@
     class CompteIndivis : public CompteJoint
     {
         public:
+            CompteIndivis(string,string,float);
             void FaireAction(string,string);
     };
     

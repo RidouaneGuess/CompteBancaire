@@ -5,6 +5,7 @@ using namespace std;
     class CompteEpargne : public CompteBancaire
     {
         public:
+            CompteEpargne(string,float);
             void Protocole();
     };
 

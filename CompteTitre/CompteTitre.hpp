@@ -6,6 +6,7 @@ using namespace std;
     class CompteTitre : public CompteCourant
     {
         public:
+            CompteTitre(string,float);
             void ActionsImmobiliere();
     };
     

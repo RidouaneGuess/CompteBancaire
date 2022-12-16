@@ -1,6 +1,11 @@
 #include<iostream>
 #include<string>
 #include"CompteTitre.hpp"
+
+CompteTitre::CompteTitre(string Nom,float montant) : CompteCourant(Nom,montant)
+{
+
+}
 void CompteTitre::ActionsImmobiliere()
 {
     float House{500000};
