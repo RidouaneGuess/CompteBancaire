@@ -1,16 +1,15 @@
 #include<iostream>>
 #include<string>
 #include"CompteIndivis.hpp"
-
-CompteIndivis::CompteIndivis()
+using namespace std;
+void CompteIndivis::FaireAction(string Nom1,string Nom2)
 {
-    
-}
-float CompteIndivis::retrait(string nom1,string nom2,float montant);
-{
-
-}
-float CompteIndivis::versement(string nom1,string nom2,float montant);
-{
-
+    if(Nom1==NomTitulaire && Nom2==Titulaire2)
+    {
+        CompteJoint::FaireAction(Nom1);
+    }
+    else
+    {
+        cout<<"\nVOUS NE POUVEZ PAS FAIRE LES ACTIONS SEUL." <<endl;
+    }
 }
