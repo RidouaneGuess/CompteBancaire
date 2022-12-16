@@ -9,7 +9,7 @@ CompteBancaire::CompteBancaire(string nom,float som)
 }                                                 void CompteBancaire::InitialiserCompteBancaire(float s)                                             {                                                         Solde=s;                                  }
 void CompteBancaire::AccederSoldeCompteBancaire()
 {
-        cout<<"Accès réussi."<<endl;
+        cout<<"LE SOLDE DE VOTRE COMPTE EST:"<<Solde<<"Frs"<<endl;
 }                                                 void CompteBancaire::CrediterCompteBancaire(float
 mont)
 {
