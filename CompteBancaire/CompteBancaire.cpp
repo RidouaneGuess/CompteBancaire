@@ -26,3 +26,13 @@ void CompteBancaire::AfficherCompteBancaire()
 CompteBancaire CompteBancaire::Virement(float som,CompteBancaire C)                                 {                                                         Solde-=som;                                       NombreRetrait++;                                  C.Solde+=som;
 	return C;					
 }
+CompteBancaire CompteBancaire::operator+(CompteBancaire C)
+{
+	cout<<"\nEntrez le nom du Titulaire:"<<endl;
+	cin>>string nom;
+	CompteBancaire S(nom,0);
+	S.Solde=this->Solde+C.Solde;
+	return S;
+}
+CompteBancaire CompteBancaire::operator=()             {                                                             cout<<"\nEntrez le nom du Titulaire:"<<endl;          cin>>string nom;                                      CompteBancaire S(nom,0);                              S.Solde=this->Solde;
+        return S;                                     }
