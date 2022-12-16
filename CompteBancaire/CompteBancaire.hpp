@@ -10,11 +10,13 @@ class CompteBancaire
 		int NombreEnvoi;
 		int NombreRetrait;
 	public:
+		CompteBancaire(string,float);
 		void InitialiserCompteBancaire(float);
 		void AccederSoldeCompteBancaire();
 		void CrediterCompteBancaire(float);
 	        void DebiterCompteBancaire(float);
-		CompteBancaire(string,float);
+		CompteBancaire operator+(CompteBancaire);
+		void operator=(CompteBancaire);
 		virtual void AfficherCompteBancaire();
 		CompteBancaire Virement(float,CompteBancaire);
 };
