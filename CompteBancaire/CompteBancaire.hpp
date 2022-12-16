@@ -16,7 +16,7 @@ class CompteBancaire
 		void CrediterCompteBancaire(float);
 	        void DebiterCompteBancaire(float);
 		CompteBancaire operator+(CompteBancaire);
-		CompteBancaire operator=(CompteBancaire);
+		void operator=(CompteBancaire);
 		virtual void AfficherCompteBancaire();
 		CompteBancaire Virement(float,CompteBancaire);
 };
