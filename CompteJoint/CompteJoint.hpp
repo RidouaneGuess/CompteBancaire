@@ -7,7 +7,7 @@ class CompteJoint :public CompteBancaire
 		string Titulaire2;
 	public:
 		CompteJoint(string,string,float);
-		void FaireAction(string nom);
+		virtual void FaireAction(string nom);
 };
 #endif
 
