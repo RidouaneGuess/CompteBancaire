@@ -5,6 +5,7 @@
 #include <gtkmm/label.h>
 #include <gtkmm/entry.h>
 #include <gtkmm/button.h>
+#include <gtkmm/checkbutton.h>
 using namespace Gtk;
     class MaFenetre : public Window
     {
@@ -12,10 +13,13 @@ using namespace Gtk;
         // Label *label;
         Entry *entry;
         Button *button;
+        CheckButton *Cbutton;
         public:
             MaFenetre();
             void Login();
             void Choix();
+            void CreeCompte();
+            void AfficherPasse();
             ~MaFenetre();
     };
 #endif
