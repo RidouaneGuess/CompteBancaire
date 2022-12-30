@@ -6,6 +6,7 @@
 #include <gtkmm/entry.h>
 #include <gtkmm/button.h>
 #include <gtkmm/checkbutton.h>
+#include <gtkmm/comboboxtext.h>
 using namespace Gtk;
     class MaFenetre : public Window
     {
@@ -14,6 +15,7 @@ using namespace Gtk;
         Entry *entry;
         Button *button;
         CheckButton *Cbutton;
+        ComboBoxText *ListeBancaire;
         public:
             MaFenetre();
             void Login();

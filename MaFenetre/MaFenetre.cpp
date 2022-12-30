@@ -4,9 +4,10 @@ using namespace std;
 MaFenetre::MaFenetre()
 {
     fixed = new Fixed[3];
-    button = new Button[5];
+    button = new Button[6];
     entry = new Entry[8];
     Cbutton = new CheckButton[1];
+    ListeBancaire = new ComboBoxText[1];
     set_title("VisioBancaire");
     resize(600,300);
     set_position(WIN_POS_CENTER);
@@ -43,10 +44,29 @@ MaFenetre::MaFenetre()
     //CreeCompte
     button[4].set_label("<-");
     entry[2].set_placeholder_text("Votre nom");
+    entry[2].set_alignment(ALIGN_CENTER);
     entry[3].set_placeholder_text("Votre prenom");
+    entry[3].set_alignment(ALIGN_CENTER);
+    entry[4].set_placeholder_text("Mot de passe");
+    entry[4].set_alignment(ALIGN_CENTER);
+    entry[4].set_visibility(false);
+    entry[5].set_placeholder_text("Confirmer");
+    entry[5].set_alignment(ALIGN_CENTER);
+    entry[5].set_visibility(false);
+    ListeBancaire->append("Indivis");
+    ListeBancaire->append("Titre");
+    ListeBancaire->append("Courant");
+    ListeBancaire->append("Joint");
+    ListeBancaire->append("Epargne");
+    ListeBancaire->append("Terme");
+    button[5].set_label("Envoyer");
+    fixed[2].put(button[4],0,0);
     fixed[2].put(entry[2],220,20);
     fixed[2].put(entry[3],220,70);
-    fixed[2].put(button[4],0,0);
+    fixed[2].put(entry[4],220,120);
+    fixed[2].put(entry[5],220,170);
+    fixed[2].put(*ListeBancaire,200,250);
+    fixed[2].put(button[5],320,250);
     fixed[2].show_all();
     button[1].signal_clicked().connect([this](){CreeCompte();});
     button[4].signal_clicked().connect([this](){Choix();});
@@ -81,4 +101,5 @@ MaFenetre::~MaFenetre()
     delete[] button;
     delete[] fixed;
     delete[] Cbutton;
+    delete[] ListeBancaire;
 }
