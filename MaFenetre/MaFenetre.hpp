@@ -11,7 +11,7 @@ using namespace Gtk;
     class MaFenetre : public Window
     {
         Fixed *fixed;
-        // Label *label;
+        Label *label;
         Entry *entry;
         Button *button;
         CheckButton *Cbutton;
@@ -22,6 +22,7 @@ using namespace Gtk;
             void Choix();
             void CreeCompte();
             void AfficherPasse();
+            bool EstCompteValide();
             ~MaFenetre();
     };
 #endif

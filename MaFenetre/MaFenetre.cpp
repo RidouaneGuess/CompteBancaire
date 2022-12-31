@@ -1,5 +1,6 @@
 #include <iostream>
 #include "MaFenetre.hpp"
+#include "../CompteIndivis/CompteIndivis.hpp"
 using namespace std;
 MaFenetre::MaFenetre()
 {
@@ -8,6 +9,7 @@ MaFenetre::MaFenetre()
     entry = new Entry[8];
     Cbutton = new CheckButton[1];
     ListeBancaire = new ComboBoxText[1];
+    label = new Label[4];
     set_title("VisioBancaire");
     resize(600,300);
     set_position(WIN_POS_CENTER);
@@ -61,15 +63,20 @@ MaFenetre::MaFenetre()
     ListeBancaire->append("Terme");
     button[5].set_label("Envoyer");
     fixed[2].put(button[4],0,0);
-    fixed[2].put(entry[2],220,20);
+    fixed[2].put(entry[2],220,10);
+    fixed[2].put(label[1],250,45);
     fixed[2].put(entry[3],220,70);
-    fixed[2].put(entry[4],220,120);
-    fixed[2].put(entry[5],220,170);
-    fixed[2].put(*ListeBancaire,200,250);
-    fixed[2].put(button[5],320,250);
+    fixed[2].put(label[2],245,105);
+    fixed[2].put(entry[4],220,130);
+    fixed[2].put(entry[5],220,190);
+    fixed[2].put(*label,230,230);
+    fixed[2].put(label[3],50,260);
+    fixed[2].put(*ListeBancaire,200,260);
+    fixed[2].put(button[5],320,260);
     fixed[2].show_all();
     button[1].signal_clicked().connect([this](){CreeCompte();});
     button[4].signal_clicked().connect([this](){Choix();});
+    button[5].signal_clicked().connect([this](){EstCompteValide();});
 }
 void MaFenetre::Login()
 {
@@ -96,10 +103,60 @@ void MaFenetre::Choix()
     remove();
     add(*fixed);
 }
+bool MaFenetre::EstCompteValide()
+{
+    int i1=1,i2=1,i3=1,i4=1;
+    if (entry[4].get_text() != entry[5].get_text())
+    {
+        label->set_text("Confirmation incorrect");
+        i1=0;
+    }
+    else
+    {
+        label->set_text("");
+        i1=1;
+    }
+    if (entry[2].get_text() == "") 
+    {
+        label[1].set_text("Saisir votre nom");
+        i2=0;
+    }
+    else
+    {
+        label[1].set_text("");
+        i2=1;
+    }
+    if (entry[3].get_text() == "")
+    {
+        label[2].set_text("Saisir votre prenom");
+        i3=0;
+    }
+    else
+    {
+        label[2].set_text("");
+        i3=1;
+    }
+    if (ListeBancaire->get_active_text() == "")
+    {
+        label[3].set_text("Type de compte");
+        i4=0;
+    }
+    else
+    {
+        label[3].set_text("");
+        i4=1;
+    }
+    if(i1 == 1 && i2 == 1 && i3 == 1 && i4 == 1)
+    {
+        remove();
+    }
+    return true;
+}
 MaFenetre::~MaFenetre()
 {
     delete[] button;
     delete[] fixed;
     delete[] Cbutton;
     delete[] ListeBancaire;
+    delete[] label;
 }
