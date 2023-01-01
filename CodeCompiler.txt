@@ -1,0 +1,2 @@
+code de compilation:
+guil master.cpp MaFenetre/*.cpp -ox prog
