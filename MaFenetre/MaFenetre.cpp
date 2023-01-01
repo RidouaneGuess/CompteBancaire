@@ -45,6 +45,7 @@ MaFenetre::MaFenetre()
     fixed[1].put(*Cbutton,210,170);
     fixed[1].show_all();
     button[2].signal_clicked().connect([this](){Choix();});
+    button[3].signal_clicked().connect([this](){Log();});
     Cbutton->signal_toggled().connect([this](){AfficherPasse();});
 
     //CreeCompte
@@ -92,7 +93,7 @@ MaFenetre::MaFenetre()
     fixed[3].put(label[4],100,100);
     fixed[3].put(button[7],400,200);
     fixed[3].show_all();
-
+    button[7].signal_clicked().connect([this](){SeDeconnecter();});
     std::ifstream connect{"BDD/connect.txt"};
     if (!connect.is_open())
         add(*fixed);
@@ -174,8 +175,8 @@ bool MaFenetre::EstCompteValide()
     if(i1 == 1 && i2 == 1 && i3 == 1 && i4 == 1)
     {
         string nfig;
-        nfig = "BDD/" + entry[2].get_text() + entry[3].get_text() + ".txt";        
-        cout << nfig << endl;
+        nfig = "BDD/" + entry[2].get_text() + ".txt";        
+        //cout << nfig << endl;
         std::ofstream fig{nfig};
         fig << "Nom:" << entry[2].get_text() << "\n";
         fig << "Prenom:" << entry[3].get_text() << "\n";
@@ -200,10 +201,32 @@ void MaFenetre::MaPage(string compte)
         std::getline(info,sinfo[i]);
     for(int i=0 ; i<4 ; i++)
         comcat += sinfo[i] + "\n";
-    cout << comcat << endl;
+    //cout << comcat << endl;
     label[4].set_text(comcat);
     remove();
     add(fixed[3]);
+}
+void MaFenetre::SeDeconnecter()
+{
+    system("rm BDD/connect.txt");
+    remove();
+    Choix();
+}
+void MaFenetre::Log()
+{
+    string chemin = "BDD/" + entry[0].get_text() + ".txt";
+    std::ifstream log{chemin};
+    if(log.is_open())
+    {
+        //cout << "Oui" << endl;
+        std::ofstream connect{"BDD/connect.txt"};
+        connect << chemin;
+        MaPage(chemin);
+    }
+    else
+    {
+        //cout << "Nom" << endl;
+    }
 }
 MaFenetre::~MaFenetre()
 {

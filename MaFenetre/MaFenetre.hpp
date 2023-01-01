@@ -28,6 +28,8 @@ using namespace std;
             void AfficherPasse();
             bool EstCompteValide();
             void MaPage(string);
+            void SeDeconnecter();
+            void Log();
             ~MaFenetre();
     };
 #endif
