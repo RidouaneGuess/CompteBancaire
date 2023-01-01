@@ -7,7 +7,6 @@
 using namespace std;
 MaFenetre::MaFenetre()
 {
-    //FILE *connect = NULL;
     fixed = new Fixed[4];
     button = new Button[8];
     entry = new Entry[9];
@@ -134,7 +133,7 @@ bool MaFenetre::EstCompteValide()
     int i1=1,i2=1,i3=1,i4=1;
     if (entry[4].get_text() != entry[5].get_text())
     {
-        label->set_text("Confirmation incorrect");
+        label->set_markup("<span color='red'>Confirmation incorrect</span>");
         i1=0;
     }
     else
@@ -144,7 +143,7 @@ bool MaFenetre::EstCompteValide()
     }
     if (entry[2].get_text() == "") 
     {
-        label[1].set_text("Saisir votre nom");
+        label[1].set_markup("<span color='red'>Saisir votre nom</span>");
         i2=0;
     }
     else
@@ -154,7 +153,7 @@ bool MaFenetre::EstCompteValide()
     }
     if (entry[3].get_text() == "")
     {
-        label[2].set_text("Saisir votre prenom");
+        label[2].set_markup("<span color='red'>Saisir votre prenom</span>");
         i3=0;
     }
     else
@@ -164,7 +163,7 @@ bool MaFenetre::EstCompteValide()
     }
     if (ListeBancaire->get_active_text() == "")
     {
-        label[3].set_text("Type de compte");
+        label[3].set_markup("<span color='red'>Type de compte</span>");
         i4=0;
     }
     else
