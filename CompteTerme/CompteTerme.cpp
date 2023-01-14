@@ -16,7 +16,7 @@ void CompteTerme::ToucherArgent()
 		float som;
 		cout<<"Entrez la somme que vous voullez toucher:"<<endl;
 		cin>>som;
-		if(this->Solde>=som)
+		if(this->Solde-som>=5000)
 		{
 			cout<<"\nVous avez:"<<som<<"Frs en poche!"<<endl;
 			NombreRetrait++;

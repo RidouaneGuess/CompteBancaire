@@ -12,7 +12,7 @@ void CompteCourant::PayerFacture()
         float montant;
         cout<<"Entrez le montant Net à payer:"<<endl;
         cin>>montant;
-        if(Solde>=montant)
+        if(Solde>=montant && Solde-montant>=5000)
         {
                 Solde-=montant;
                 NombreDepense++;
@@ -59,7 +59,7 @@ void CompteCourant::RecevoirBourseEtude()
                 cout<<"\nQuelle est votre filiére?"<<endl;
                 string fili;
                 cin>>fili;
-                cout<<"\n\nFéllicitation, vous êtes autorisé à poursuivre vos etudes à "<<institu;
+                cout<<"\n\nFélicitation, vous êtes autorisé à poursuivre vos etudes à "<<institu;
                 NombreRecevoirBourseEtude++;
         }
         else

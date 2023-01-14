@@ -16,7 +16,7 @@ void CompteJoint::FaireAction(string nom)
 		cin>>rep;
 		if(rep==1)
 		{
-			if(Solde>=PC){
+			if(Solde>=PC && Solde-PC>=5000){
 			cout<<"\nFellicitationVous venez d'acheter un PC!"<<endl;
 			
 			NombreRetrait++;
